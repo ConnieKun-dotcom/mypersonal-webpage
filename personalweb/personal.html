@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Home Page -->
+    <div class="container" id="home-page">
+        <div class="profile-card">
+            <div class="profile-image">
+                <img src="profile.jfif" alt="Profile Picture">
+            </div>
+            <h1>Connie Cera</h1>
+            <p class="title">Jack of all trades. Master of none</p>
+            <p class="location">Batangas City, Philippines</p>
+            
+            <div class="social-links">
+                <a href="#" class="social-icon" id="facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon" id="tiktok"><i class="fab fa-tiktok"></i></a>
+                <a href="#" class="social-icon" id="instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+            
+            <div class="buttons">
+                <button class="btn primary" id="message-me">Message Me</button>
+                <button class="btn secondary" id="view-interests">View Interests</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interests Page -->
+    <div id="interests-page" style="display: none;">
+        <div style="position: fixed; top: 20px; left: 20px; z-index: 1001;">
+            <button onclick="document.getElementById('interests-page').style.display='none'; document.getElementById('home-page').style.display='flex';" class="btn primary" style="padding: 8px 20px; border-radius: 20px; border: none; cursor: pointer; font-weight: 600; background-color: #4a90e2; color: white; display: flex; align-items: center; gap: 8px;">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </button>
+        </div>
+        <div class="profile-header-container">
+            <div class="profile-header">
+                <div class="profile-picture">
+                    <img src="profile.jfif" alt="Profile Picture">
+                </div>
+            </div>
+        </div>
+        <div class="profile-content-container">
+            <div class="profile-info">
+                <h1>Connie Cera</h1>
+                <p class="profile-title">Jack of all trades. Master of none</p>
+                <p class="profile-quote">"It's perfectly okay to be a jack of all trades. Life isn't always about mastering just one thing—it's about exploring, creating, and expressing ourselves through the many things we love to do. Each interest we pursue, whether big or small, becomes an outlet of who we are and what we value. Being a jack means embracing versatility, curiosity, and growth—it's proof that our passions can coexist and shape us into well-rounded individuals."</p>
+            </div>
+            
+            <div class="interests-container">
+                <h2>My Interests</h2>
+                <div class="interests-grid">
+                    <div class="interest-box" onclick="showInterest('photography')">
+                        <div class="interest-icon">&#128247;</div>
+                        <h3>Photography</h3>
+                    </div>
+                    <div class="interest-box" onclick="showInterest('travel')">
+                        <div class="interest-icon">&#9992;</div>
+                        <h3>Travel</h3>
+                    </div>
+                    <div class="interest-box" onclick="showInterest('nails')">
+                        <div class="interest-icon">💅</div>
+                        <h3>Nail Design</h3>
+                    </div>
+                    <div class="interest-box" onclick="showInterest('cooking')">
+                        <div class="interest-icon">&#127858;</div>
+                        <h3>Cooking</h3>
+                    </div>
+                    <div class="interest-box" onclick="showInterest('reading')">
+                        <div class="interest-icon">&#128214;</div>
+                        <h3>Reading</h3>
+                    </div>
+                    <div class="interest-box" onclick="showInterest('cat')">
+                        <div class="interest-icon">🐱</div>
+                        <h3>Cats</h3>
+                    </div>
+                    <div class="interest-box" onclick="showInterest('movies')">
+                        <div class="interest-icon">🎬</div>
+                        <h3>Movies</h3>
+                    </div>
+                    <div class="interest-box" onclick="showInterest('makeup')">
+                        <div class="interest-icon">💄</div>
+                        <h3>Make Up</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Individual Interest Pages -->
+    <div id="photography" class="interest-page" style="display: none;">
+        <h2>Photography</h2>
+        <p>I love capturing moments and telling stories through my lens. Here are some of my favorite shots.</p>
+        <div class="gallery">
+            <img src="photo1.jfif" alt="Photo 1">
+            <img src="photo3.jfif" alt="Photo 2">
+            <img src="photo6.jfif" alt="Photo 3">
+            <img src="photo7.jfif" alt="Photo 4">
+        </div>
+        <button class="back-btn" onclick="backToInterests()">Back to Interests</button>
+    </div>
+    <div id="travel" class="interest-page" style="display: none;">
+        <h2>Travel</h2>
+        <p>Exploring new places and experiencing different cultures is my passion.</p>
+        <div class="gallery">
+            <img src="travel.jfif" alt="Travel 1">
+            <img src="travel2.jfif" alt="Travel 2">
+            <img src="travel4.jfif" alt="Travel 3">
+            <img src="travel5.jfif" alt="Travel 4">
+        </div>
+        <button class="back-btn" onclick="backToInterests()">Back to Interests</button>
+    </div>
+    <div id="nails" class="interest-page" style="display: none;">
+        <h2>Nail Design</h2>
+        <p>I love expressing my creativity through beautiful nail art designs.</p>
+        <div class="gallery">
+            <img src="nail1.jfif" alt="Nail Design 1">
+            <img src="nail2.jfif" alt="Nail Design 2">
+            <img src="nail3.jfif" alt="Nail Design 3">
+            <img src="nail4.jfif" alt="Nail Design 4">
+        </div>
+        <button class="back-btn" onclick="backToInterests()">Back to Interests</button>
+    </div>
+    <div id="cooking" class="interest-page" style="display: none;">
+        <h2>Cooking</h2>
+        <p>I enjoy experimenting with flavors and creating delicious meals.</p>
+        <div class="gallery">
+            <img src="cook1.jfif" alt="Dish 1">
+            <img src="cook2.jfif" alt="Dish 2">
+            <img src="cook3.jfif" alt="Dish 3">
+            <img src="cook4.jfif" alt="Dish 4">
+        </div>
+        <button class="back-btn" onclick="backToInterests()">Back to Interests</button>
+    </div>
+    <div id="reading" class="interest-page" style="display: none;">
+        <h2>Reading</h2>
+        <p>Books are my gateway to different worlds and perspectives.</p>
+        <div class="gallery">
+            <img src="reading1.jfif" alt="Book 1">
+            <img src="reading2.jfif" alt="Book 2">
+            <img src="reading3.jfif" alt="Book 3">
+            <img src="reading4.jfif" alt="Book 4">
+        </div>
+        <button class="back-btn" onclick="backToInterests()">Back to Interests</button>
+    </div>
+    <div id="cat" class="interest-page" style="display: none;">
+        <h2>Cats</h2>
+        <p>Adorable feline companions that bring joy to my life.</p>
+        <div class="gallery">
+            <img src="cat1.jfif" alt="Cat 1">
+            <img src="cat2.jfif" alt="Cat 2">
+            <img src="cat3.jfif" alt="Cat 3">
+            <img src="cat4.jfif" alt="Cat 4">
+        </div>
+        <button class="back-btn" onclick="backToInterests()">Back to Interests</button>
+    </div>
+    <div id="movies" class="interest-page" style="display: none;">
+        <h2>Movies</h2>
+        <p>I enjoy watching and analyzing films from different genres and eras.</p>
+        <div class="gallery">
+            <img src="movie1.jfif" alt="Movie 1">
+            <img src="movie2.jfif" alt="Movie 2">
+            <img src="movie3.jfif" alt="Movie 3">
+            <img src="movie4.jfif" alt="Movie 4">
+        </div>
+        <button class="back-btn" onclick="backToInterests()">Back to Interests</button>
+    </div>
+    <div id="makeup" class="interest-page" style="display: none;">
+        <h2>Make Up</h2>
+        <p>Exploring the art of makeup and beauty is one of my creative outlets.</p>
+        <div class="gallery">
+            <img src="makeup1.jfif" alt="Makeup Look 1">
+            <img src="makeup2.jfif" alt="Makeup Look 2">
+            <img src="makeup3.jfif" alt="Makeup Look 3">
+            <img src="makeup4.jfif" alt="Makeup Look 4">
+        </div>
+        <button class="back-btn" onclick="backToInterests()">Back to Interests</button>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
